@@ -35,12 +35,19 @@ enum LocationError: LocalizedError {
     }
 }
 
+struct LocationEvent: Identifiable {
+    let id = UUID()
+    let indentifier: String
+}
+
 @Observable
 class LocationManager: NSObject, CLLocationManagerDelegate {
     
     let manager = CLLocationManager()
     static let shared = LocationManager()
     var error: LocationError? = nil
+    var monitor: CLMonitor?
+    var locationEvent: LocationEvent?
     
     var region: MKCoordinateRegion = MKCoordinateRegion()
     
@@ -48,6 +55,26 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
         super.init()
         manager.desiredAccuracy = kCLLocationAccuracyBest
         self.manager.delegate = self
+    }
+    
+    func startRegionMonitoring() async {
+        monitor = await CLMonitor("MountainRegionMonitor")
+        await monitor?.add(CLMonitor.CircularGeographicCondition.beaverCreekResort, identifier: "beaverCreekResort", assuming: .unsatisfied)
+        await monitor?.add(CLMonitor.CircularGeographicCondition.vailMountainVillage, identifier: "vailMountainVillage", assuming: .unsatisfied)
+
+        Task {
+            for try await event in await monitor!.events {
+                switch event.state {
+                    case .satisfied:
+                        guard let lastEvent = await monitor!.record(for: event.identifier)?.lastEvent else { continue }
+                        locationEvent = LocationEvent(indentifier: lastEvent.identifier)
+                    case .unknown, .unsatisfied, .unmonitored:
+                        print("unknown or unsatisfied or unmonitored")
+                    @unknown default:
+                        print("unknown default")
+                }
+            }
+        }
     }
 }
 
