@@ -11,7 +11,7 @@ import SwiftUI
 struct MountainRegionMonitoringApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MountainResortView()
         }
     }
 }

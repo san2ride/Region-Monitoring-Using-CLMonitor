@@ -13,6 +13,8 @@
 		F7562B0D2C66B21600E6DFCB /* MountainResortView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7562B0C2C66B21600E6DFCB /* MountainResortView.swift */; };
 		F7562B0F2C66B25300E6DFCB /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7562B0E2C66B25300E6DFCB /* LocationManager.swift */; };
 		F7562B112C66B2B900E6DFCB /* MKCoordinateRegion+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7562B102C66B2B900E6DFCB /* MKCoordinateRegion+Ext.swift */; };
+		F7562B132C66B37800E6DFCB /* CLMonitor.CircularGeographicCondition+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7562B122C66B37800E6DFCB /* CLMonitor.CircularGeographicCondition+Ext.swift */; };
+		F7562B152C66B3CF00E6DFCB /* CLLocationCoordinate2D+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7562B142C66B3CF00E6DFCB /* CLLocationCoordinate2D+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		F7562B0C2C66B21600E6DFCB /* MountainResortView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainResortView.swift; sourceTree = "<group>"; };
 		F7562B0E2C66B25300E6DFCB /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		F7562B102C66B2B900E6DFCB /* MKCoordinateRegion+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKCoordinateRegion+Ext.swift"; sourceTree = "<group>"; };
+		F7562B122C66B37800E6DFCB /* CLMonitor.CircularGeographicCondition+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLMonitor.CircularGeographicCondition+Ext.swift"; sourceTree = "<group>"; };
+		F7562B142C66B3CF00E6DFCB /* CLLocationCoordinate2D+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				F7562B042C66B10F00E6DFCB /* Preview Content */,
 				F7562B0E2C66B25300E6DFCB /* LocationManager.swift */,
 				F7562B102C66B2B900E6DFCB /* MKCoordinateRegion+Ext.swift */,
+				F7562B122C66B37800E6DFCB /* CLMonitor.CircularGeographicCondition+Ext.swift */,
+				F7562B142C66B3CF00E6DFCB /* CLLocationCoordinate2D+Ext.swift */,
 			);
 			path = MountainRegionMonitoring;
 			sourceTree = "<group>";
@@ -143,7 +149,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7562B132C66B37800E6DFCB /* CLMonitor.CircularGeographicCondition+Ext.swift in Sources */,
 				F7562B0D2C66B21600E6DFCB /* MountainResortView.swift in Sources */,
+				F7562B152C66B3CF00E6DFCB /* CLLocationCoordinate2D+Ext.swift in Sources */,
 				F7562AFF2C66B10D00E6DFCB /* MountainRegionMonitoringApp.swift in Sources */,
 				F7562B0F2C66B25300E6DFCB /* LocationManager.swift in Sources */,
 				F7562B112C66B2B900E6DFCB /* MKCoordinateRegion+Ext.swift in Sources */,

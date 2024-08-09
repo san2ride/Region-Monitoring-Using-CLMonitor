@@ -9,8 +9,24 @@ import SwiftUI
 import MapKit
 
 struct MountainResortView: View {
+    @State private var locationManager = LocationManager.shared
+    @State private var position: MapCameraPosition = .userLocation(fallback: .automatic)
+    
+    let artwork = ["appleCampus": "apple-park", "cupertinoVillage": "cupertino-village"]
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack(alignment: .bottom) {
+            
+            Map(position: $position) {
+                UserAnnotation()
+                
+                MapCircle(center: .beaverCreekResort, radius: 50)
+                    .foregroundStyle(.indigo.opacity(0.4))
+                
+                MapCircle(center: .vailMountainVillage, radius: 50)
+                                .foregroundStyle(.pink.opacity(0.4))
+            }
+        }
     }
 }
 
